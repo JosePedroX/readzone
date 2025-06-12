@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Detalhes do Livro</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .detalhes-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .detalhes-imagem {
+      flex: 1 1 100px;
+    }
+
+    .detalhes-info {
+      flex: 2 1 400px;
+    }
+
+    .ficha {
+      background: #e6f2ff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    .avaliacoes {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .avaliacoes h2 {
+      margin-top: 0;
+    }
+
+    .avaliacao {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    .avaliacao:last-child {
+      border-bottom: none;
+    }
+
+    .btn-voltar {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #0077cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Detalhes do Livro</h1>
+    <div id="detalhesLivro" class="detalhes-container"></div>
+
+    <div class="avaliacoes">
+      <h2>📢 Avaliações dos Leitores</h2>
+      <div class="avaliacao">⭐️⭐️⭐️⭐️⭐️ <strong>Ana:</strong> Excelente leitura, me prendeu do começo ao fim!</div>
+      <div class="avaliacao">⭐️⭐️⭐️⭐️ <strong>João:</strong> Muito bom, mas o início é um pouco lento.</div>
+      <div class="avaliacao">⭐️⭐️⭐️ <strong>Carla:</strong> Legal, mas não era o que eu esperava.</div>
+    </div>
+
+    <a class="btn-voltar" href="index.html">⬅️ Voltar à Biblioteca</a>
+  </div>
+
+  <script>
+    const container = document.getElementById("detalhesLivro");
+    const livro = JSON.parse(localStorage.getItem("livroSelecionado"));
+
+    if (livro) {
+      container.innerHTML = `
+        <div class="detalhes-imagem">
+          <img src="${livro.cover}" alt="${livro.title}" style="width:100%; border-radius:10px;" />
+        </div>
+        <div class="detalhes-info">
+          <h2>${livro.title}</h2>
+          <p><strong>Autor:</strong> ${livro.author}</p>
+          <p>${livro.description}</p>
+          <div class="ficha">
+            <h3>📋 Ficha Técnica</h3>
+            <p><strong>Título:</strong> ${livro.title}</p>
+            <p><strong>Autor:</strong> ${livro.author}</p>
+            <p><strong>Categoria:</strong> ${livro.category}</p>
+            <p><strong>Ano:</strong> 1954</p>
+            <p><strong>Editora:</strong> Editora Exemplo</p>
+            <p><strong>Páginas:</strong> 500</p>
+          </div>
+        </div>
+      `;
+    } else {
+      container.innerHTML = "<p>Nenhum livro selecionado.</p>";
+    }
+  </script>
+</body>
+</html>
