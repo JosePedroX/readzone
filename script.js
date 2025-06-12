@@ -3,7 +3,7 @@ const books = [
     title: "É assim que acaba",
     author: "Colleen Hoover",
     description: "É assim que acaba é o romance mais pessoal da carreira de Colleen Hoover, discutindo temas como violência doméstica e abuso psicológico de forma sensível e direta. ",
-    cover: "/imagens/eassimqueacaba.jpeg",
+    cover: "/imagens/acaba.jpeg",
     category: "Romance",
   },
   {
@@ -24,15 +24,16 @@ const books = [
     title: "Conjurador: O aprendiz",
     author: "Taran Matharu",
     description: "Primeiro volume da série Conjurador, O aprendiz é um prato cheio para os fãs de Harry Potter, O Senhor dos Anéis e outros clássicos da fantasia. Com referências a jogos de RPG, Pokémon e Skyrim, o romance mescla a magia dos mundos fantásticos com criaturas poderosas em duelos de tirar o fôlego.",
-    cover: "/images/oaprendiz.jpeg",
+    cover: "/images/conjurador.jpeg",
     category: "Aventura",
+    
   },
 
   {
     title: "O Senhor dos Anéis ",
     author: "	J. R. R. Tolkien",
     description: "O Senhor dos Anéis é um livro de alta fantasia, escrito pelo escritor britânico J. R. R. Tolkien. Escrita entre 1937 e 1949, com muitas partes criadas durante a Segunda Guerra Mundial, a saga é uma continuação de O Hobbit.",
-    cover: "/images/anel.jpep",
+    cover: "/images/anel.jpeg",
     category: "Aventura",
   },
 ];
